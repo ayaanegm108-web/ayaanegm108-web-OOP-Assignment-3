@@ -4,7 +4,7 @@ using System.Text;
 
 namespace src
 {
-    pu class Store<T>
+    public class Store<T> where T : IHasId
     {
         private readonly List<T> _items = new();
 
