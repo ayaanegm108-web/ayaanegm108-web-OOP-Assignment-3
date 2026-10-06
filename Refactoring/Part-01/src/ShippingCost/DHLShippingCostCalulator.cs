@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Part_01.src.ShippingCost
 {
-    public class DHLShippingCostCalulator : IShippingCostCalculator
+    public class DHLShippingCostCalulator : ICarrier
     {
         public static decimal Calculate(decimal weightKg)
         {

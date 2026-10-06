@@ -6,7 +6,7 @@ using System.Threading.Channels;
 
 namespace Part_01.src.ShippingCost
 {
-    public interface IShippingCostCalculator
+    public interface ICarrier
     {
         static decimal Calculate(decimal weightKg)=> throw new ArgumentException($"Unknown carrier ");
     }

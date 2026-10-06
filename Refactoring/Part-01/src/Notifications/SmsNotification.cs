@@ -5,7 +5,7 @@ using System.Text;
 namespace Part_01.src.Notifications
 {
 
-    internal class SmsNotification : INotification
+    public class SmsNotification : INotification
     {
         
             private NotificationType Type { get; set; }

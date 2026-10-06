@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Part_01.src.ShippingCost
 {
-    public class FedExShippingCostCalulator : IShippingCostCalculator
+    public class FedExShippingCostCalulator : ICarrier
     {
         public static decimal Calculate(decimal weightKg)
         {

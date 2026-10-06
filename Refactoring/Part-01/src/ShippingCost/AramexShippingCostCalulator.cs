@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Part_01.src.ShippingCost
 {
-    internal class AramexShippingCostCalulator : IShippingCostCalculator
+    internal class AramexShippingCostCalulator : ICarrier
     {
 
         private static AramexShippingCostCalulator _instance;

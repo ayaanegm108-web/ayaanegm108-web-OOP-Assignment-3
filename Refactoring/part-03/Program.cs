@@ -7,7 +7,7 @@ const int requestCount = 5_000;
 var blockedIds = BlockedUserChecker.BuildBlockedIds(blockedCount);
 var requestIds = BlockedUserChecker.BuildRequestIds(requestCount, blockedCount);
 var ms = BlockedUserChecker.MeasureMs(blockedIds, requestIds, out var found);
-Console.WriteLine($"blockedIds={blockedCount}, requests={requestCount}, found={found}, time={ms} ms");
+Console.WriteLine($"blockedIds={blockedCount}, requests={requestCount}, found={found}, time={ms} ms");//16ms
 Console.WriteLine();
 
 Console.WriteLine("=== Students (1_000_000) ===");
