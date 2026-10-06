@@ -1,6 +1,6 @@
 ﻿using src;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 var cases = new (string? Input, string Method, bool Expected)[]
 {

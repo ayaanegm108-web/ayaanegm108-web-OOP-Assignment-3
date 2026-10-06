@@ -19,4 +19,5 @@ foreach (var student in StudentCatalog.GetAllStudents())
     if (printed == 3)
         break;
 }
-Console.WriteLine($"printed={printed}");
+Console.WriteLine($"printed={printed}\n");
+

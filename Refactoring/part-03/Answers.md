@@ -9,7 +9,7 @@
   request.
 - Time (ms) before: 13 ms
 - What did you change?
-  Replaced List<int> with HashSet<int> in BlockedUserChecker, so each lookup is
+  Replaced List<int> with HashSet<int> in BlockedUserChecker so each lookup is
   a hash lookup instead of a linear scan. The found count is unchanged (5000).
 - Time complexity after: O(n + m). Building the set is O(m) and each of the
   n lookups is O(1) on average.

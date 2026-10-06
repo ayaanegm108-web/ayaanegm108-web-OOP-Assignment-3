@@ -57,7 +57,7 @@ Console.WriteLine();
 Console.WriteLine();
 
 // ---------- 5) Must NOT compile ----------
- var names = new Store<string>();   // must NOT compile: string does not implement IHasId
+// var names = new Store<string>();   // must NOT compile: string does not implement IHasId
 
 #region Test
 //var list = new List<Student>
