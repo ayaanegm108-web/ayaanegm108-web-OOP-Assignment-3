@@ -6,28 +6,22 @@ namespace src
 {
     public class Store<T> where T : IHasId
     {
-        private readonly List<T> _items = new();
+        private readonly Dictionary<int, T> _items = new();
 
-        public void Add(T item) => _items.Add(item);
-
-        public T? GetById(int id)
+        public void Add(T item)
         {
-            foreach (var item in _items)
-            {
-                if (item.Id == id)      // <-- compiler error here
-                    return item;
-            }
-            return default;
+            if (_items.ContainsKey(item.Id))
+                throw new InvalidOperationException(
+                    $"An item with Id {item.Id} already exists in the store.");
+
+            _items.Add(item.Id, item);
         }
 
-        public List<T> GetAll() => _items;
+        public T? GetById(int id) =>
+       _items.TryGetValue(id, out var item) ? item : default;
 
-        public bool Remove(int id)
-        {
-            var item = GetById(id);
-            if (item is null)
-                return false;
-            return _items.Remove(item);
-        }
+        public IReadOnlyCollection<T> GetAll() => _items.Values;
+
+        public bool Remove(int id) => _items.Remove(id);
     }
 }

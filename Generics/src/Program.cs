@@ -37,3 +37,12 @@ CoursesStore.Add(new Course { Id = 11, Title = "OOP", Price = 750m });
 Console.WriteLine(CoursesStore.GetById(11)?.Title);
 Console.WriteLine(CoursesStore.Remove(10));
 Console.WriteLine(CoursesStore.GetAll().Count);
+//Test 
+try
+{
+    StudentStore.Add(new Student { Id = 2, Name = "Duplicate" });
+}
+catch (InvalidOperationException ex)
+{
+    Console.WriteLine(ex.Message);
+}
