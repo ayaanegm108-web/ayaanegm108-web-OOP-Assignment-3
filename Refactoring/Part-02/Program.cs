@@ -1,3 +1,4 @@
+using Part_02.Enrollment;
 using RefactoringLab.Part02.Enrollment;
 using RefactoringLab.Part02.Reports;
 
@@ -11,17 +12,15 @@ new TextReportExporter().Export(Path.Combine(outDir, "report.txt"));
 Console.WriteLine($"Wrote reports to {outDir}");
 Console.WriteLine();
 
-Console.WriteLine("=== Enrollment ===");
+Console.WriteLine("=== EnrollmentFacade ===");
 var studentId = "S100";
 var courseId = "CS201";
 var amount = 1500m;
 
-var payment = new PaymentGateway();
-var seats = new SeatInventory();
-var invoices = new InvoiceGenerator();
-var email = new EmailService();
+EnrollmentFacade facade = new EnrollmentFacade();
+//var payment = new PaymentGateway();
+//var seats = new SeatInventory();
+//var invoices = new InvoiceGenerator();
+//var email = new EmailService();
 
-payment.Charge(studentId, amount);
-seats.Reserve(courseId, studentId);
-var invoiceId = invoices.Create(studentId, amount);
-email.Send(studentId, "Enrollment confirmed", $"Invoice {invoiceId} for {courseId}");
+facade.Enroll(studentId, courseId, amount);
