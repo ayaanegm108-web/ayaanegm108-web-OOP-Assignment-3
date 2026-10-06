@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Part-01/Part-01.csproj" />
+  <Project Path="Part-02/Part-02.csproj" />
+  <Project Path="part-03/Part-03.csproj" />
+</Solution>
