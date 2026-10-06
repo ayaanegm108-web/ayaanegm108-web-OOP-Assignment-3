@@ -32,3 +32,14 @@ point T can be any type at all (string, int, a class without an Id), so the
 compiler only knows that T is an object. It does not know that T has an Id
 property, so item.Id is not allowed. It cannot just trust that I will only
 use Student and Course. I have to tell it what T must have, using a constraint.
+
+## Step 7 — Why must new Store<string>() NOT compile?
+cause we have a constraint on the generic type parameter T that requires 
+it to implement the IHasId interface. Since string does not implement IHasId,
+it cannot be used as a type argument for Store<T>.
+
+
+Compiler error (copied):
+CS0311: The type 'string' cannot be used as type parameter 'T'
+in the generic type or method 'Store<T>'. There is no implicit
+reference conversion from 'string' to 'src.IHasId'
