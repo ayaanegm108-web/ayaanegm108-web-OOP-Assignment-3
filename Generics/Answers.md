@@ -18,3 +18,17 @@
 The logic is copy-pasted, so any fix or new feature (for example, faster
 lookup) would have to be done once per store, and every new entity type
 (Teacher, Room...) would need a third copy.
+
+
+## Step 3 — Compiler error in GetById
+
+Error copied from the compiler:
+
+    error CS1061: 'T' does not contain a definition for 'Id' ... (paste your own full message here)
+
+Why the compiler rejects it:
+Store<T> is checked once, when it is written, not when it is used. At that
+point T can be any type at all (string, int, a class without an Id), so the
+compiler only knows that T is an object. It does not know that T has an Id
+property, so item.Id is not allowed. It cannot just trust that I will only
+use Student and Course. I have to tell it what T must have, using a constraint.
